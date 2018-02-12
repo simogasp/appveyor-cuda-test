@@ -1,5 +1,9 @@
 version: 1.0.{build}
 
-build_script:
+
+install:
 - cmd: >-
     call build.cmd
+    
+build_script:
+ - echo "Done!"
