@@ -1,8 +1,8 @@
 @echo off
-echo Downloading CUDA toolkit 8
-appveyor DownloadFile  https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda_8.0.44_windows-exe -FileName cuda_8.0.44_windows.exe
+echo Downloading CUDA toolkit 8.0.61
+appveyor DownloadFile  https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_windows-exe -FileName cuda_8.0.61_windows-exe
 echo Installing CUDA toolkit 8
-cuda_8.0.44_windows.exe -s compiler_8.0 ^
+cuda_8.0.61_windows-exe -s compiler_8.0 ^
                            cublas_8.0 ^
                            cublas_dev_8.0 ^
                            cudart_8.0 ^
@@ -13,8 +13,8 @@ appveyor DownloadFile https://developer.nvidia.com/compute/machine-learning/cudn
 7z x cudnn-8.0-windows7-x64-v5.1.zip -ocudnn
 dir cudnn
 dir cudnn\cuda\bin
-dir cudnn\cuda\lib 
-dir cudnn\cuda\include     
+dir cudnn\cuda\lib
+dir cudnn\cuda\include
 
 dir .
 
@@ -24,7 +24,7 @@ dir "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA"
 dir "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0"
 dir "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin"
 
-if NOT EXIST "%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\cudart64_80.dll" ( 
+if NOT EXIST "%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\cudart64_80.dll" (
 echo "Failed to install CUDA"
 exit /B 1
 )
